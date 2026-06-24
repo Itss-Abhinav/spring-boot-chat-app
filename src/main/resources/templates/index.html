@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring Boot Real-Time Chat</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body class="bg-light">
+
+<div class="container mt-5" id="username-page">
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+            <h2 class="mb-4">Welcome to the Chat</h2>
+            <form id="usernameForm">
+                <div class="input-group mb-3">
+                    <input type="text" id="name" class="form-control" placeholder="Enter your username" autocomplete="off" required>
+                    <button class="btn btn-primary" type="submit">Start Chatting</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-4 d-none" id="chat-page">
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white text-center">
+            <h4>Global Chat Room</h4>
+        </div>
+        <div class="card-body">
+            <ul id="messageArea" class="list-unstyled" style="height: 400px; overflow-y: auto;">
+            </ul>
+        </div>
+        <div class="card-footer">
+            <form id="messageForm">
+                <div class="input-group">
+                    <input type="text" id="message" class="form-control" placeholder="Type a message..." autocomplete="off" required>
+                    <button class="btn btn-success" type="submit">Send</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+<script src="/main.js"></script>
+</body>
+</html>
